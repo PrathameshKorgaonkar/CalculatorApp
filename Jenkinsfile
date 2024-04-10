@@ -6,7 +6,7 @@ pipeline {
                 sh 'g++ main.cpp'
             }
         }
-        stage('build') {
+        stage('run') {
             steps {
                 sh './a.out'
             }
