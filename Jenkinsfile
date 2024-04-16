@@ -19,19 +19,12 @@ pipeline {
                 def lastBuild = currentBuild.previousBuild
                 
                 if (lastBuild) {
-                    def lastLog = lastBuild.getLogText()
-                    def currentLog = currentBuild.getLogText()
+                    def lastLog = lastBuild.rawBuild.getLog(100000) // Adjust the number of lines as needed
                     
-                    if (!lastLog.equals(currentLog)) {
-                        echo "Build logs are different:"
-                        def diff = currentLog.minus(lastLog)
-                        echo "Difference:"
-                        echo diff
-                    } else {
-                        echo "Build logs are identical."
-                    }
+                    echo "Previous build log:"
+                    echo lastLog
                 } else {
-                    echo "No previous build to compare with."
+                    echo "No previous build to display."
                 }
             }
         }
