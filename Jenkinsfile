@@ -24,7 +24,7 @@ pipeline {
                     
                     if (!lastLog.equals(currentLog)) {
                         echo "Build logs are different:"
-                        def diff = diff(lastLog, currentLog)
+                        def diff = currentLog.minus(lastLog)
                         echo "Difference:"
                         echo diff
                     } else {
@@ -35,9 +35,5 @@ pipeline {
                 }
             }
         }
-    }
-    
-    def diff(String oldStr, String newStr) {
-        return newStr.replace(oldStr, "")
     }
 }
