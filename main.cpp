@@ -19,7 +19,7 @@ int main()
     int choice, num3, num4;
     string answer;// integer variables
     do {
-        cout << "Calculator Menu" << "\n";  
+        cout << "Calculator Menu (DEVELOPER MODE)" << "\n";  
         cout << "1. Addition" << "\n";
         cout << "2. Subtraction" << "\n";
         cout << "3. Multiplication" << "\n";
