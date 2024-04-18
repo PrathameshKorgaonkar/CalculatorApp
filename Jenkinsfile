@@ -1,5 +1,5 @@
 pipeline {
-    agent Linux-Node-v1
+    agent any
     stages {
         stage('build') {
             steps {
